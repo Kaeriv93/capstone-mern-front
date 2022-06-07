@@ -1,10 +1,16 @@
 import './App.css';
+import Main from './Components/Main';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+   <>
+   <Header/>
+    <Main/>
+    <Footer/>
+   </>
   );
 }
 
