@@ -43,7 +43,7 @@ function Login() {
                     if(email) generateError(email)
                     else if(password) generateError(password)
                 }else{
-                    navigate(`/`)
+                    navigate(`/user/${data.user}`)
                 }
             }
 
@@ -66,10 +66,10 @@ function Login() {
             <form onSubmit={handleSubmit}>
                 <div className="flex-container">
                     <div className="container">
-                        <label for="email"><b>Email</b></label>
+                        <label htmlFor="email"><b>Email</b></label>
                         <input type="text" placeholder="Enter Email" name="email" required onChange={handleChange}/>
 
-                        <label for="password"><b>Password</b></label>
+                        <label htmlFor="password"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required onChange={handleChange}/>
                             
                         <button type="submit">Login</button>
