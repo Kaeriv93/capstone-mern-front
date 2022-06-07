@@ -41,7 +41,7 @@ const Register = () =>{
                     if(email) generateError(email)
                     else if(password) generateError(password)
                 }else{
-                    navigate('/success')
+                    navigate('/login')
                 }
             }
 

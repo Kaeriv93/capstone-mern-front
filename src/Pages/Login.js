@@ -1,12 +1,19 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
+import { useCookies } from "react-cookie";
 import axios from 'axios'
 
 
-const Login = () =>{
-    const navigate = useNavigate()
-    const[ newForm, setNewForm] = useState({
+function Login() {
+    const [cookies] = useCookies([]);
+    const navigate = useNavigate();
+    useEffect(() => {
+      if (cookies.jwt) {
+        navigate("/");
+      }
+    }, [cookies, navigate]);
+    const [newForm, setNewForm] = useState({
         email:'',
         password:''
     })
@@ -32,36 +39,48 @@ const Login = () =>{
             console.log(data)
             if(data){
                 if(data.errors){
-                    const{email, password} = data.errors
-                    if(email)generateError(email)
+                    const {email,password} = data.errors
+                    if(email) generateError(email)
                     else if(password) generateError(password)
                 }else{
-                    navigate('/register')
+                    navigate(`/`)
                 }
             }
-        }catch(err){
+
+        } catch(err){
             console.log(err)
         }
         setNewForm({
             email:'',
-            password:''
+            passwords:''
         })
     }
-   return(
-       <>
-        <div>
+
+
+
+
+    return(
+        <div className="loginpage">
+            <h2>Login Form</h2>
+
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input type="text" placeholder="email" name="email" required onChange={handleChange}/>
-      
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="password" name="password" required onChange={handleChange}/>
-                <input type ="submit" value="login"/>
+                <div className="flex-container">
+                    <div className="container">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required onChange={handleChange}/>
+
+                        <label for="password"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required onChange={handleChange}/>
+                            
+                        <button type="submit">Login</button>
+                        <button type="button" class="cancelbtn">Cancel</button>
+                    </div>
+
+                </div>
             </form>
+            <ToastContainer/>
         </div>
-        <ToastContainer/>
-       </>
-   )
+)
 }
 
 export default Login
