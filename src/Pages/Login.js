@@ -73,7 +73,7 @@ function Login() {
                         <input type="password" placeholder="Enter Password" name="password" required onChange={handleChange}/>
                             
                         <button type="submit">Login</button>
-                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="button" className="cancelbtn">Cancel</button>
                     </div>
 
                 </div>

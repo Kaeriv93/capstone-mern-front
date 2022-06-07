@@ -8,16 +8,18 @@ import UserPage from '../Pages/UserPage'
 
 
 const Main = () =>{
-
     const [user,setUser] = useState(null)
     
     const URL = "http://localhost:4000/users/"
+
+
     
     const getUsers = () =>{
         fetch(URL)
         .then(response => response.json())
         .then(result => setUser(result))
     }
+
 
     useEffect(()=> getUsers(),[])
     return(
