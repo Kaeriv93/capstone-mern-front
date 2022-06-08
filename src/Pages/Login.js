@@ -76,7 +76,7 @@ function Login() {
                         <input className="input" type="password" placeholder="Enter Password" name="password" required onChange={handleChange}/>
                         <br/>
                         <br/>
-                        <button className="button is-primary is-outlined" type="submit">Login</button>
+                        <button className="button is-info" type="submit">Login</button>
                     </div>
                     <br/>
                     <h4>Don't have an account? <Link to='/register'>Sign up</Link></h4>

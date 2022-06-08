@@ -12,6 +12,10 @@ a:hover{
     width: 100%;
 }
 
+.field{
+    width: 25vw;
+}
+
 .loginpage{
     margin-top: 10vh;
     display: flex;
