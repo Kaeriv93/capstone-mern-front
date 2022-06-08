@@ -1,8 +1,10 @@
 import {useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import { useCookies } from "react-cookie";
 import axios from 'axios'
+import './Styles/login.css'
+
 
 
 function Login() {
@@ -43,7 +45,7 @@ function Login() {
                     if(email) generateError(email)
                     else if(password) generateError(password)
                 }else{
-                    navigate(`/`)
+                    navigate(`/user/${data.user}`)
                 }
             }
 
@@ -61,21 +63,23 @@ function Login() {
 
     return(
         <div className="loginpage">
-            <h2>Login Form</h2>
-
+            <div className="title">
+                <h1>facenovel</h1>
+                <p>Connect with friends and world around you on FaceNovel</p>
+            </div>
             <form onSubmit={handleSubmit}>
-                <div className="flex-container">
-                    <div className="container">
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" name="email" required onChange={handleChange}/>
-
-                        <label for="password"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="password" required onChange={handleChange}/>
-                            
-                        <button type="submit">Login</button>
-                        <button type="button" class="cancelbtn">Cancel</button>
+                <div className="field">
+                    <div>
+                        <input className="input" type="text" placeholder="Enter Email" name="email" required onChange={handleChange}/>
+                        <br/>
+                        <br/>
+                        <input className="input" type="password" placeholder="Enter Password" name="password" required onChange={handleChange}/>
+                        <br/>
+                        <br/>
+                        <button className="button is-info" type="submit">Login</button>
                     </div>
-
+                    <br/>
+                    <h4>Don't have an account? <Link to='/register'>Sign up</Link></h4>
                 </div>
             </form>
             <ToastContainer/>

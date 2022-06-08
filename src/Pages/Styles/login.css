@@ -1,0 +1,41 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+a{
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+a:hover{
+    color: mediumturquoise;
+}
+
+.button{
+    width: 100%;
+}
+
+.field{
+    width: 25vw;
+}
+
+.loginpage{
+    margin-top: 10vh;
+    display: flex;
+    height: 40vw;
+}
+
+.title{
+    width: 50%;
+    line-height: 1.5;
+    margin-left: 20vh;
+}
+
+.title h1{
+    font-size: 3rem;
+    text-align: left;
+    color:#0077b5;
+    font-weight: 700;
+}
+
+.title p{
+    font-size: 1.5rem;
+    text-align: left;
+}

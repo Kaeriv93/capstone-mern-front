@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 
-const Home = () =>{
+const Posts = () =>{
     const[post,setPost] = useState(null)
 
     const getPost = () =>{
@@ -21,9 +21,9 @@ const Home = () =>{
 
     return post ? loaded():(
         <div>
-            <h1>You Guessed It This is our Homepage!</h1>
+            <h1>Should Have  A POST HERE</h1>
         </div>
     )
 }
 
-export default Home
+export default Posts

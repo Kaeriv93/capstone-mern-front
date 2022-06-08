@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify'
+import './Styles/register.css'
 
 const Register = () =>{
     const navigate = useNavigate()
@@ -10,7 +11,11 @@ const Register = () =>{
         lastName:'',
         username:'',
         email:'',
-        password:''
+        password:'',
+        avatar:'',
+        birthdate:'',
+        city:'',
+        from:'',
     })
 
     const generateError = (err) => toast.error(err,{
@@ -53,7 +58,11 @@ const Register = () =>{
             lastName:'',
             username:'',
             email:'',
-            passwords:''
+            password:'',
+            avatar:'',
+            birthdate:'',
+            city:'',
+            from:'',
         })
     }
 
@@ -65,26 +74,38 @@ const Register = () =>{
                     <div className="grid-container">
                         <div className="sign-container">
                             <div className="sign">
-                                <h1>Sign Up</h1>
                                 <p>Please fill in this form to create an account</p>
                             </div>
                             <hr/>
                             <label htmlFor="firstName"><b>First Name</b></label>
-                            <input  type="text" value={newForm.firstName} placeholder="Enter your first name" name="firstName" required onChange={handleChange} />
+                            <input className='input' type="text" value={newForm.firstName} placeholder="Enter your first name" name="firstName" required onChange={handleChange} />
                             <br/>
                             <label htmlFor ="lastName"><b>Last Name</b></label>
-                            <input type="text" value={newForm.lastName} placeholder="Enter your last name" name="lastName" required onChange={handleChange}/>
+                            <input className='input'type="text" value={newForm.lastName} placeholder="Enter your last name" name="lastName" required onChange={handleChange}/>
                             <br/>
                             <label htmlFor ="username"><b>Username</b></label>
-                            <input  type="text" value={newForm.username} placeholder="Enter your username" name="username" required onChange={handleChange}/>
+                            <input  className='input'type="text" value={newForm.username} placeholder="Enter your username" name="username" required onChange={handleChange}/>
                             <br/>
                             <label htmlFor="email"><b>Email</b></label>
-                            <input  type="text" value={newForm.email} placeholder="Enter Email" name="email" required onChange={handleChange}/>
+                            <input  className='input'type="text" value={newForm.email} placeholder="Enter Email" name="email" required onChange={handleChange}/>
                             <br/>
                             <label htmlFor ="password"><b>Password</b></label>
-                            <input  type="password" value={newForm.password} placeholder="Enter Password" name="password" required onChange={handleChange}/>
-                            <input type="submit" value="Sign Up"/>
-                        
+                            <input  className='input'type="password" value={newForm.password} placeholder="Enter Password" name="password" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='avatar'><b>Avatar</b></label>
+                            <input className='input'type="text" value={newForm.avatar} placeholder="Enter a picture" name ="avatar" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='birthdate'><b>Birthdate</b></label>
+                            <input className='input'type="date" value={newForm.birthdate} name ="birthdate" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='city'><b>City</b></label>
+                            <input className='input'type="text" value={newForm.city} placeholder="City,State" name ="city" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='from'><b>From</b></label>
+                            <input className='input'type="text" value={newForm.from} placeholder="Hometown" name ="from" required onChange={handleChange}/>
+                            <br/>
+                            <br/>
+                            <input className='button is-link' type="submit" value="Sign Up"/>
 
                         </div>
                     </div>
@@ -96,3 +117,9 @@ const Register = () =>{
 }
 
 export default Register
+
+
+// avatar:'',
+// birthdate:'',
+// city:'',
+// from:'',

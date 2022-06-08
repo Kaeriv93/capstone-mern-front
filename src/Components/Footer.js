@@ -1,7 +1,7 @@
 const Footer = () => {
     return(
-        <div>
-            <h3>And this is the Footer Component</h3>
+        <div className="footer">
+            <h3> GeneralAssembly © 2022</h3>
         </div>
     )
 }
