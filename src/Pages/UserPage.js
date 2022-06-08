@@ -18,7 +18,7 @@ const UserPage = (props) =>{
             console.log(data)
         }
         getBlogData()
-    },[])
+    },[id])
 
     const loaded = () => {
         return blog.map((blogs,idx)=>(
@@ -53,7 +53,7 @@ const UserPage = (props) =>{
                 </div>
                 <div>
                     <h1>Hello! {user.firstName} {user.lastName}</h1>
-                    <img src={user.avatar} alt ={user.firstName}/>
+                    <img className="profile" src={user.avatar} alt ={user.firstName}/>
                     <h3>{user.username}</h3>
                 </div>
                 <div>

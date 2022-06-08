@@ -1,3 +1,8 @@
+body{
+
+  background-color: #F6F6F6;
+}
+
 nav a{
   text-decoration: none;
   padding: 10vw;
@@ -10,4 +15,13 @@ nav a:hover{
 
 .footer{
   background-color: white;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#FFFF00;
+  height: 1px;
 }

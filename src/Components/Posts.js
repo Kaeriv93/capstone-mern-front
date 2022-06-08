@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
 
+
 const Posts = () =>{
     const[post,setPost] = useState(null)
 

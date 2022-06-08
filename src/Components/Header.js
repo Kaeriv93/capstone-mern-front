@@ -7,6 +7,7 @@ import { useCookies } from 'react-cookie'
 const Header = () =>{
     const navigate = useNavigate()
     const [cookies, setCookie, removeCookie] = useCookies([])
+    
     const logOut = () =>{
         removeCookie('jwt')
         navigate('/login')
