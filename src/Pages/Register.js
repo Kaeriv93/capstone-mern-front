@@ -10,7 +10,11 @@ const Register = () =>{
         lastName:'',
         username:'',
         email:'',
-        password:''
+        password:'',
+        avatar:'',
+        birthdate:'',
+        city:'',
+        from:'',
     })
 
     const generateError = (err) => toast.error(err,{
@@ -53,7 +57,11 @@ const Register = () =>{
             lastName:'',
             username:'',
             email:'',
-            passwords:''
+            password:'',
+            avatar:'',
+            birthdate:'',
+            city:'',
+            from:'',
         })
     }
 
@@ -83,8 +91,21 @@ const Register = () =>{
                             <br/>
                             <label htmlFor ="password"><b>Password</b></label>
                             <input  type="password" value={newForm.password} placeholder="Enter Password" name="password" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='avatar'><b>Avatar</b></label>
+                            <input type="text" value={newForm.avatar} placeholder="Enter a picture" name ="avatar" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='birthdate'><b>Birthdate</b></label>
+                            <input type="date" value={newForm.birthdate} name ="birthdate" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='city'><b>City</b></label>
+                            <input type="text" value={newForm.city} placeholder="City,State" name ="city" required onChange={handleChange}/>
+                            <br/>
+                            <label htmlFor ='from'><b>From</b></label>
+                            <input type="text" value={newForm.from} placeholder="Hometown" name ="from" required onChange={handleChange}/>
+                            <br/>
+
                             <input type="submit" value="Sign Up"/>
-                        
 
                         </div>
                     </div>
@@ -96,3 +117,9 @@ const Register = () =>{
 }
 
 export default Register
+
+
+// avatar:'',
+// birthdate:'',
+// city:'',
+// from:'',
