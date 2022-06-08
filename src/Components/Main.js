@@ -22,6 +22,23 @@ const Main = () =>{
         .then(result => setUser(result))
     }
 
+    const updatedUser = async( user, id) =>{
+        await fetch('http://localhost:4000/user/' + id,{
+            method:"put",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+        getUsers()
+    }
+
+    const deleteUser = async id =>{
+        await fetch('http://localhost:4000/user/' + id,{
+            method:'delete',
+        })
+        getUsers()
+    }
 
     useEffect(()=> getUsers(),[])
 
@@ -33,7 +50,7 @@ const Main = () =>{
                <Route path = '/' element={<Home/>}/>
                <Route path ='/login' element ={<Login/>}/>
                <Route path = '/register' element ={<Register/>}/>
-               <Route path = '/user/:id' element ={<UserPage user={user}/>}/>
+               <Route path = '/user/:id' element ={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
            </Routes>
        </main>
     )

@@ -5,15 +5,31 @@ body{
     background-color: #F6F6F6;
 }
 
-.profile img{
-    height:25vw;
-    width:25vw;
+.user img{
+    height:20vw;
+    width:20vw;
     border-radius: 50%;
+    border: 2px solid white;
+    float: left;
 }
 
-.cover-picture img{
+.cover img{
     width: 100%;
-    height: 30vw;
-    border-radius: 0px;
-    border: 1px solid;
+    height: 40vw;
+}
+
+.grid-container{
+    display: grid;
+}
+
+.blog{
+    margin-left: 25vw;
+    justify-content: center;
+    max-width: 55vw;
+}
+
+.box p{
+    width: 50%;
+    line-height: 1.5;
+    margin: 0 auto;
 }

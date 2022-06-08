@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-
+import '../Pages/Styles/post.css'
 
 const Posts = () =>{
     const[post,setPost] = useState(null)
@@ -17,7 +17,7 @@ const Posts = () =>{
                 <p>{posts.content}</p>
                 <img className="post-img" src={posts.img} alt={posts.content}/>        
                 <br/>
-                <p>{posts.createdAt}</p>
+                <p className="created-at">{posts.createdAt}</p>
                 <br/>
             </div>
         ))
