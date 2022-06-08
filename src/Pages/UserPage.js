@@ -1,6 +1,8 @@
 import {useParams } from "react-router-dom"
 import {useEffect,useState} from 'react'
 import './Styles/userpage.css'
+import Sidebar
+ from "../Components/Sidebar"
 const UserPage = (props) =>{
     const [blog,setBlog] = useState(null)
     let {id} = useParams()
@@ -40,17 +42,7 @@ const UserPage = (props) =>{
                 <img src={user.coverPicture} alt="coverpicture"/>
             </div>
             <div className="container">
-                <div className="links">
-                    <ul>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                    </ul>
-                </div>
+                <Sidebar/>
                 <div>
                     <h1>Hello! {user.firstName} {user.lastName}</h1>
                     <img className="profile" src={user.avatar} alt ={user.firstName}/>

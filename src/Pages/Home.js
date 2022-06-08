@@ -6,9 +6,8 @@ const Home = () =>{
 
     return(
         <div>
-            <h1>You Guessed It This is our Homepage!</h1>
-            <Sidebar/>
             <Posts/>
+            <Sidebar/>
         </div>
     )
 }

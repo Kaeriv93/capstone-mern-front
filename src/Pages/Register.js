@@ -118,8 +118,3 @@ const Register = () =>{
 
 export default Register
 
-
-// avatar:'',
-// birthdate:'',
-// city:'',
-// from:'',

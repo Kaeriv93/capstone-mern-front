@@ -15,7 +15,10 @@ const Posts = () =>{
         return post.map((posts,idx)=>(
             <div key={idx}>
                 <p>{posts.content}</p>
+                <img className="post-img" src={posts.img} alt={posts.content}/>        
+                <br/>
                 <p>{posts.createdAt}</p>
+                <br/>
             </div>
         ))
     }

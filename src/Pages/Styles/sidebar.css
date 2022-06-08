@@ -1,8 +1,7 @@
 .sidebar {
     flex: 3;
     height: calc(100vh - 50px);
-    overflow-y: scroll;
-    position: sticky;
+    position: absolute;
     top: 50px;
   }
   
@@ -25,14 +24,6 @@
   
   .sidebarIcon {
     margin-right: 15px;
-  }
-  
-  .sidebarButton {
-    width: 150px;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
   }
   
   
