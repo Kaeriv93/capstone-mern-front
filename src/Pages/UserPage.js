@@ -15,7 +15,7 @@ const UserPage = (props) =>{
             const response = await fetch(`http://localhost:4000/user/${id}/blog`)
             const data = await response.json()
             setBlog(data)
-            // console.log(data)
+            console.log(data)
         }
         getBlogData()
     },[])
@@ -74,7 +74,7 @@ const UserPage = (props) =>{
                 <h2>{user.followers}</h2>
             </div>
             <div className="blog">
-                <h2>These are my personal blogs!</h2>
+                <h2>Blog Posts!</h2>
                 {loaded()}
             </div>
         </>

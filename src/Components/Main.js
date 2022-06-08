@@ -9,6 +9,7 @@ import UserPage from '../Pages/UserPage'
 
 const Main = () =>{
     const [user,setUser] = useState(null)
+
     
     const URL = "http://localhost:4000/users/"
 
@@ -22,6 +23,9 @@ const Main = () =>{
 
 
     useEffect(()=> getUsers(),[])
+
+
+
     return(
        <main>
            <Routes>
