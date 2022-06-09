@@ -10,10 +10,11 @@ import UserPage from '../Pages/UserPage'
 
 const Main = () =>{
     const [user,setUser] = useState(null)
+    const [post,setPost] = useState(null)
 
     
     const URL = "http://localhost:4000/users/"
-
+    const URL2 ="http://localhost:4000/post"
 
     
     const getUsers = () =>{
