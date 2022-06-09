@@ -79,10 +79,10 @@ const UserPage = (props) =>{
 
     return blog ?(
         <>  
+            <div className="cover">
+                <img src ={user.coverPicture} alt="coverpicture"/>
+            </div>
            <div className="grid-container">
-               <div className="cover">
-                    <img src ={user.coverPicture} alt="coverpicture"/>
-               </div>
                <div className="box">
                     <div className="user">
                         <img src ={user.avatar} alt={user.firstName}/>
@@ -106,8 +106,14 @@ const UserPage = (props) =>{
                 {loaded()}
             </div>
             <div className="editform">
-                <form>
-                    <input className="input"type ="text" placeholder="edit here!"/>
+                <h1 className="title">Edit Here!</h1>
+                <form onSubmit ={handleSubmit} className="nameEdit">
+                    <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.firstName}/>
+                    <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.lastName}/>
+                    <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.username}/>
+                    <br/>
+                    <br/>
+                    <input className="button is-link" type='submit'/>
                 </form>
             </div>
         </>

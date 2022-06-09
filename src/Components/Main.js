@@ -23,7 +23,7 @@ useEffect(()=> getUsers(),[])
 
     const updatedUser = async( user, id) =>{
         await fetch('http://localhost:4000/user/' + id,{
-            method:"put",
+            method:"PUT",
             headers:{
                 "Content-Type": "application/json",
             },
