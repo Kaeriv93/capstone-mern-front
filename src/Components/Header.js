@@ -1,9 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 
-
-
-
 const Header = () =>{
     const navigate = useNavigate()
     const [cookies, setCookie, removeCookie] = useCookies([])

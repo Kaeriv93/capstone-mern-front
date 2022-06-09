@@ -2,7 +2,11 @@ import './input.css'
 import { FaEllipsisV,FaThumbsUp,FaRegHeart} from "react-icons/fa";
 import {useEffect,useState} from 'react'
 
-const Input = () =>{
+
+const Input = (props) =>{
+    let users = props.users
+    console.log(users._id)
+
     const [post,setPost] = useState(null)
 
     const URL2 ="http://localhost:4000/post"
@@ -20,15 +24,36 @@ const Input = () =>{
 
     useEffect(()=> getPost(),[])
 
+    const name = (id) =>{
+        for(let i = 0; i< users.length; i++){
+            if(id === users[i]._id){
+                return(
+                    <span className="postUsername">{users[i].firstName} {users[i].lastName}</span>
+                )
+            } 
+        }
+    }
+   
+    const picture = (id) =>{
+        for(let i = 0; i< users.length; i++){
+            if(id === users[i]._id){
+                return(
+                    <img className="postProfileImg" src={users[i].avatar} alt={users[i].firstName}/>
+                )
+            }
+        }
+    }
+    
     const loaded = () =>{
-        return post.map((posts,idx)=>(
+        return post.reverse().map((posts,idx)=>(
             <div key={idx}>
                  <div className="input-container">
             <div className="inputWrapper">
                 <div className="inputTop">
                     <div className='topLeft'>
-                        <img className="postProfileImg" src="https://i.imgur.com/ON62Y4U.jpg" alt="me-again"/>
-                        <span className="postUsername">{posts.userId}</span>
+                        {picture(posts.userId)}
+                        <span className="postUsername">{name(posts.userId)}</span>
+                        {/* {console.log(posts.userId)} */}
                         <span className="postDate">{formatDate(posts.createdAt)}</span>
                     </div>
                     <div className="topRight">
@@ -62,3 +87,7 @@ const Input = () =>{
 }
 
 export default Input
+
+// return users ? (
+//     <h1>Hello world!</h1>
+// ): <h1>Don't think this works!</h1>

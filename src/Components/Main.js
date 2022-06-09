@@ -10,22 +10,20 @@ import UserPage from '../Pages/UserPage'
 
 const Main = () =>{
     const [user,setUser] = useState(null)
-    const [post,setPost] = useState(null)
-
-    
     const URL = "http://localhost:4000/users/"
-    const URL2 ="http://localhost:4000/post"
 
-    
     const getUsers = () =>{
         fetch(URL)
         .then(response => response.json())
         .then(result => setUser(result))
     }
 
+
+useEffect(()=> getUsers(),[])
+
     const updatedUser = async( user, id) =>{
         await fetch('http://localhost:4000/user/' + id,{
-            method:"put",
+            method:"PUT",
             headers:{
                 "Content-Type": "application/json",
             },
@@ -36,19 +34,20 @@ const Main = () =>{
 
     const deleteUser = async id =>{
         await fetch('http://localhost:4000/user/' + id,{
-            method:'delete',
+            method:'DELETE',
         })
         getUsers()
     }
 
-    useEffect(()=> getUsers(),[])
+
+ 
 
 
 
     return(
        <main>
            <Routes>
-               <Route path = '/' element={<Home/>}/>
+               <Route path = '/' element={<Home user={user}/>}/>
                <Route path ='/login' element ={<Login/>}/>
                <Route path = '/register' element ={<Register/>}/>
                <Route path = '/user/:id' element ={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
