@@ -34,7 +34,7 @@ useEffect(()=> getUsers(),[])
 
     const deleteUser = async id =>{
         await fetch('http://localhost:4000/user/' + id,{
-            method:'delete',
+            method:'DELETE',
         })
         getUsers()
     }

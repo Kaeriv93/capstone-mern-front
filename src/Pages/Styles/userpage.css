@@ -29,6 +29,10 @@ body{
     max-width: 55vw;
 }
 
+.box{
+    width: 100%;
+}
+
 .box p{
     width: 50%;
     line-height: 1.5;
@@ -44,8 +48,14 @@ body{
 .editform input{
     left: 5vw;
     width: 50vw;
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 .editform input[type=submit]{
+    width: 150px;
+}
+
+.deleteAccount button{
     width: 150px;
 }

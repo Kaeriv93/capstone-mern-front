@@ -1,7 +1,8 @@
 import {useParams, useNavigate,} from "react-router-dom"
 import {useEffect,useState} from 'react'
-import './Styles/userpage.css'
 import { FaHeart } from "react-icons/fa";
+import { ToastContainer, toast} from "react-toastify";
+import './Styles/userpage.css'
 
 const UserPage = (props) =>{
     const navigate = useNavigate()
@@ -23,9 +24,9 @@ const UserPage = (props) =>{
     }
 
     const deleteAccount = () =>{
-        props.deleteUser(id)
-        navigate('/')
+          toast("Are you sure?")
     }
+
 
     useEffect(()=>{
         const getBlogData = async ()=>{
@@ -107,14 +108,40 @@ const UserPage = (props) =>{
             </div>
             <div className="editform">
                 <h1 className="title">Edit Here!</h1>
-                <form onSubmit ={handleSubmit} className="nameEdit">
-                    <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.firstName}/>
-                    <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.lastName}/>
-                    <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.username}/>
-                    <br/>
-                    <br/>
-                    <input className="button is-link" type='submit'/>
-                </form>
+                <div className="">
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.firstName}/>
+                        <input className="button is-link" type='submit'/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="lastName" placeholder="edit here!" value={editForm.lastName}/>
+                        <input className="button is-link" type='submit'/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="username" placeholder="edit here!" value={editForm.username}/>
+                        <input className="button is-link" type='submit'/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="avatar" placeholder="Enter a picture!" value={editForm.avatar}/>
+                        <input className="button is-link" type='submit' value ="Picture"/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="coverPicture" placeholder="Enter a cover picture!" value={editForm.coverPicture}/>
+                        <input className="button is-link" type='submit' value="Backdrop"/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="city" placeholder="Enter City!" value={editForm.city}/>
+                        <input className="button is-link" type='submit'/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="from" placeholder="Where are you from?" value={editForm.from}/>
+                        <input className="button is-link" type='submit'/>
+                    </form>
+                    <div className="deleteAccount">
+                        <button className="button is-danger" onClick={deleteAccount}>Delete Account</button>
+                    </div>
+                </div>
+                <ToastContainer/>
             </div>
         </>
     ): <h1>Loading!</h1>
