@@ -1,15 +1,31 @@
-import {useParams } from "react-router-dom"
+import {useParams, useNavigate,} from "react-router-dom"
 import {useEffect,useState} from 'react'
 import './Styles/userpage.css'
 import { FaHeart } from "react-icons/fa";
 
 const UserPage = (props) =>{
+    const navigate = useNavigate()
     const [blog,setBlog] = useState(null)
     let {id} = useParams()
     let users = props.user
     let user = users.find(u => u._id ===id)
-    console.log(user)
+    
+    const[editForm, setEditForm] = useState(user)
 
+    const handleChange = event =>{
+        setEditForm({...editForm, [event.target.name]:event.target.value})
+    }
+
+    const handleSubmit = event =>{
+        event.preventDefault()
+        props.updatedUser(editForm, id)
+        navigate(`/user/${id}`)
+    }
+
+    const deleteAccount = () =>{
+        props.deleteUser(id)
+        navigate('/')
+    }
 
     useEffect(()=>{
         const getBlogData = async ()=>{
@@ -88,6 +104,11 @@ const UserPage = (props) =>{
                     <h2 className="title is-5">Admin Posts and Updates!</h2>
                 </div>
                 {loaded()}
+            </div>
+            <div className="editform">
+                <form>
+                    <input className="input"type ="text" placeholder="edit here!"/>
+                </form>
             </div>
         </>
     ): <h1>Loading!</h1>
