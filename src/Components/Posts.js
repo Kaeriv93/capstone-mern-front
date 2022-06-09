@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
-import '../Pages/Styles/post.css'
-
+import Share from './share/Share'
+import './Styles/posts.css'
 const Posts = () =>{
     const[post,setPost] = useState(null)
 
@@ -11,21 +11,25 @@ const Posts = () =>{
     }
     useEffect(() => getPost(),[])
 
-    const loaded = () =>{
-        return post.map((posts,idx)=>(
-            <div key={idx}>
-                <p>{posts.content}</p>
-                <img className="post-img" src={posts.img} alt={posts.content}/>        
-                <br/>
-                <p className="created-at">{posts.createdAt}</p>
-                <br/>
-            </div>
-        ))
-    }
+    // const loaded = () =>{
+    //     return post.map((posts,idx)=>(
+    //         <div className="posts" key={idx}>
+    //             <div className ="postWrapper">
+    //                 <p>{posts.content}</p>
+    //                 <img className="post-img" src={posts.img} alt={posts.content}/>        
+    //                 <br/>
+    //                 <p className="created-at">{posts.createdAt}</p>
+    //                 <br/>
+    //             </div>
+    //         </div>
+    //     ))
+    // }
 
-    return post ? loaded():(
-        <div>
-            <h1>Should Have  A POST HERE</h1>
+    return (
+        <div className="posts">
+            <div className="postWrapper">
+                <Share/>
+            </div>
         </div>
     )
 }
