@@ -1,3 +1,7 @@
+body{
+  background-color: #F6F6F6;
+}
+
 nav a{
   text-decoration: none;
   padding: 10vw;
@@ -10,4 +14,27 @@ nav a:hover{
 
 .footer{
   background-color: white;
+}
+
+.logout{
+  border: none;
+  background-color: #F6F6F6;
+  cursor: pointer;
+}
+
+.brand-name{
+  float: left;
+  text-align: left;
+  font-size: 1.5rem;
+  color:#0077b5;
+  font-weight: 700;
+}
+
+.message-header{
+  max-width: 10vw;
+}
+
+.post-img{
+  max-width: 200px;
+  max-height: 200px;
 }

@@ -1,6 +1,8 @@
 import {useParams } from "react-router-dom"
 import {useEffect,useState} from 'react'
 import './Styles/userpage.css'
+import { FaHeart } from "react-icons/fa";
+
 const UserPage = (props) =>{
     const [blog,setBlog] = useState(null)
     let {id} = useParams()
@@ -8,7 +10,6 @@ const UserPage = (props) =>{
     let user = users.find(u => u._id ===id)
     console.log(user)
 
- 
 
     useEffect(()=>{
         const getBlogData = async ()=>{
@@ -18,63 +19,69 @@ const UserPage = (props) =>{
             console.log(data)
         }
         getBlogData()
-    },[])
+    },[id])
 
     const loaded = () => {
         return blog.map((blogs,idx)=>(
             <div key={idx}>
-                <h3>{blogs.content}</h3>
-                <p>{blogs.createdAt}</p>
+                <div className="box">
+                    <article className="media">
+                        <div className="media-left">
+                            <figure className="image is-64x64">
+                                <img className="is-rounded"src="https://i.imgur.com/ON62Y4U.jpg" alt="jonny"/>
+                            </figure>
+                        </div>
+                        <div className="media-content">
+                            <div className="content">
+                                <p>
+                                    <strong>Jonny San(Admin)</strong> <small>@kaeriv93</small> <small>{blogs.createdAt}</small>
+                                    <br/>
+                                    {blogs.content}
+                                </p>
+                            </div>
+                            <div className='level-left'>
+                                <span className="icon is-small">
+                                    <FaHeart/>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <br/>
             </div>
         ))
     }
-
-
     
 
 
 
     return blog ?(
         <>  
-            <div className="cover-picture">
-                <img src={user.coverPicture} alt="coverpicture"/>
-            </div>
-            <div className="container">
-                <div className="links">
-                    <ul>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                        <li>Something</li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>Hello! {user.firstName} {user.lastName}</h1>
-                    <img src={user.avatar} alt ={user.firstName}/>
-                    <h3>{user.username}</h3>
-                </div>
-                <div>
-                    <h3>Birthday</h3>
-                    <p>{user.birthDate}</p>
-                    <h3>Location</h3>
-                    <h3>{user.city}</h3>
-                    <h3>From</h3>
-                    <h4>{user.from}</h4>
-                </div>
-                <div className="user-desc">
-                    <h3>About Me</h3>
+           <div className="grid-container">
+               <div className="cover">
+                    <img src ={user.coverPicture} alt="coverpicture"/>
+               </div>
+               <div className="box">
+                    <div className="user">
+                        <img src ={user.avatar} alt={user.firstName}/>
+                    <h1 class="title">About Me</h1>
                     <p>{user.description}</p>
-                </div>
-            </div>
-            <div>
-                <h2>{user.followings}</h2>
-                <h2>{user.followers}</h2>
-            </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <p className="title is-4">@{user.username}</p>
+                    <p>Name: {user.firstName}
+                     {user.lastName}</p>
+                    <p>{user.birthDate}</p>
+                    <p>Location: {user.city}</p>
+                    <p>From: {user.from}</p>
+               </div>
+           </div>
+           <br/>
             <div className="blog">
-                <h2>Blog Posts!</h2>
+                <div className="box admin">
+                    <h2 className="title is-5">Admin Posts and Updates!</h2>
+                </div>
                 {loaded()}
             </div>
         </>

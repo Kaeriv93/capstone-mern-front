@@ -1,27 +1,15 @@
-import {useState,useEffect} from 'react'
-
+// import {useState,useEffect} from 'react'
+import Share from './share/Share'
+import './Styles/posts.css'
+import Input from './input/Input'
 const Posts = () =>{
-    const[post,setPost] = useState(null)
-
-    const getPost = () =>{
-        fetch('http://localhost:4000/post')
-        .then(response => response.json())
-        .then(result => setPost(result))
-    }
-    useEffect(() => getPost(),[])
-
-    const loaded = () =>{
-        return post.map((posts,idx)=>(
-            <div key={idx}>
-                <p>{posts.content}</p>
-                <p>{posts.createdAt}</p>
+    
+    return (
+        <div className="posts">
+            <div className="postWrapper">
+                <Share/>
+                <Input/>
             </div>
-        ))
-    }
-
-    return post ? loaded():(
-        <div>
-            <h1>Should Have  A POST HERE</h1>
         </div>
     )
 }
