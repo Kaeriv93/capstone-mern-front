@@ -2,6 +2,9 @@
 
 .signup{
     margin-top: 5vw;
-    max-width: 75vw;
-    margin-left: 15vw;
+    max-width: 100vw;
+}
+
+.signup input[type=text]{
+    width: 100vw;
 }
