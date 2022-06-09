@@ -21,6 +21,12 @@ const UserPage = (props) =>{
         getBlogData()
     },[id])
 
+    const formatDate = (dateString) => {
+        const options = { year: "numeric", month: "long", day: "numeric" }
+        return new Date(dateString).toLocaleDateString(undefined, options)
+      }
+
+
     const loaded = () => {
         return blog.map((blogs,idx)=>(
             <div key={idx}>
@@ -34,7 +40,7 @@ const UserPage = (props) =>{
                         <div className="media-content">
                             <div className="content">
                                 <p>
-                                    <strong>Jonny San(Admin)</strong> <small>@kaeriv93</small> <small>{blogs.createdAt}</small>
+                                    <strong>Jonny San(Admin)</strong> <small>@kaeriv93</small> <small>{formatDate(blogs.createdAt)}</small>
                                     <br/>
                                     {blogs.content}
                                 </p>
@@ -72,7 +78,6 @@ const UserPage = (props) =>{
                     <p className="title is-4">@{user.username}</p>
                     <p>Name: {user.firstName}
                      {user.lastName}</p>
-                    <p>{user.birthDate}</p>
                     <p>Location: {user.city}</p>
                     <p>From: {user.from}</p>
                </div>

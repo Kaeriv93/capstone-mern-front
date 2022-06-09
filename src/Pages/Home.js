@@ -10,7 +10,7 @@ const Home = () =>{
             <div className="homeContainer">
                 <Sidebar/>
                 <Posts/>
-                <Rightbar/> 
+                {/* <Rightbar/>  */}
             </div>
         </>
     )
