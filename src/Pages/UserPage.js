@@ -1,12 +1,14 @@
 import {useParams, useNavigate,} from "react-router-dom"
 import {useEffect,useState} from 'react'
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaEdit} from "react-icons/fa";
 import { ToastContainer, toast} from "react-toastify";
 import './Styles/userpage.css'
 
 const UserPage = (props) =>{
     const navigate = useNavigate()
     const [blog,setBlog] = useState(null)
+    const [isActive, isSetActive] = useState('false')
+    const [isDelete, isSetDelete] = useState('false')
     let {id} = useParams()
     let users = props.user
     let user = users.find(u => u._id ===id)
@@ -26,6 +28,19 @@ const UserPage = (props) =>{
     const deleteAccount = () =>{
           toast("Are you sure?")
     }
+
+    const realDeleteButton = () =>{
+        props.deleteUser(id)
+        navigate('/')
+    }
+
+   const handleToggle = () =>{
+       isSetActive(!isActive)
+   }
+
+   const toggleDelete =() =>{
+       isSetDelete(!isDelete)
+   }
 
 
     useEffect(()=>{
@@ -107,8 +122,8 @@ const UserPage = (props) =>{
                 {loaded()}
             </div>
             <div className="editform">
-                <h1 className="title">Edit Here!</h1>
-                <div className="">
+                <button onClick={handleToggle}className="edit button is-success"><span className="edit-text">Edit</span><FaEdit/></button>
+                <div className={isActive ? "hiddenForm" : null}>
                     <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.firstName}/>
                         <input className="button is-link" type='submit'/>
@@ -137,10 +152,13 @@ const UserPage = (props) =>{
                         <input onChange={handleChange} className="input" type ="text" name="from" placeholder="Where are you from?" value={editForm.from}/>
                         <input className="button is-link" type='submit'/>
                     </form>
-                    <div className="deleteAccount">
+                </div>
+                    <div onClick={toggleDelete}className="deleteAccount">
                         <button className="button is-danger" onClick={deleteAccount}>Delete Account</button>
                     </div>
-                </div>
+                    <div className={isDelete ? "realDelete" : null}>
+                        <button className="button is-danger is-outlined" onClick={realDeleteButton}>Real Delete</button>
+                    </div>
                 <ToastContainer/>
             </div>
         </>

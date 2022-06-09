@@ -58,4 +58,23 @@ body{
 
 .deleteAccount button{
     width: 150px;
+    margin-bottom: 15px;
+}
+
+.edit{
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.edit-text{
+    margin-right: 5px;
+}
+
+.hiddenForm{
+    display: none;
+}
+
+.realDelete{
+    width: 150px;
+    display: none;
 }
