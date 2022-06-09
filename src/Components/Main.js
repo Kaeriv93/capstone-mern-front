@@ -21,23 +21,23 @@ const Main = () =>{
 
 useEffect(()=> getUsers(),[])
 
-    // const updatedUser = async( user, id) =>{
-    //     await fetch('http://localhost:4000/user/' + id,{
-    //         method:"put",
-    //         headers:{
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(user),
-    //     })
-    //     getUsers()
-    // }
+    const updatedUser = async( user, id) =>{
+        await fetch('http://localhost:4000/user/' + id,{
+            method:"put",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+        getUsers()
+    }
 
-    // const deleteUser = async id =>{
-    //     await fetch('http://localhost:4000/user/' + id,{
-    //         method:'delete',
-    //     })
-    //     getUsers()
-    // }
+    const deleteUser = async id =>{
+        await fetch('http://localhost:4000/user/' + id,{
+            method:'delete',
+        })
+        getUsers()
+    }
 
 
  
@@ -47,10 +47,10 @@ useEffect(()=> getUsers(),[])
     return(
        <main>
            <Routes>
-               <Route path = '/' element={<Home/>}/>
+               <Route path = '/' element={<Home user={user}/>}/>
                <Route path ='/login' element ={<Login/>}/>
                <Route path = '/register' element ={<Register/>}/>
-               <Route path = '/user/:id' element ={<UserPage user={user}/>}/>
+               <Route path = '/user/:id' element ={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
            </Routes>
        </main>
     )

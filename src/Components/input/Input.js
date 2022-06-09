@@ -2,7 +2,11 @@ import './input.css'
 import { FaEllipsisV,FaThumbsUp,FaRegHeart} from "react-icons/fa";
 import {useEffect,useState} from 'react'
 
-const Input = () =>{
+
+const Input = (props) =>{
+    let users = props.users
+
+    console.log(users)
     const [post,setPost] = useState(null)
 
     const URL2 ="http://localhost:4000/post"
@@ -59,6 +63,9 @@ const Input = () =>{
 
     
     return post ? loaded():<h1>Error Loading Page</h1>
+    // return users ? (
+    //     <h1>Hello world!</h1>
+    // ): <h1>Don't think this works!</h1>
 }
 
 export default Input

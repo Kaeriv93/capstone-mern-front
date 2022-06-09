@@ -1,24 +1,12 @@
-import {useState,useEffect} from 'react'
 import { FaBirthdayCake } from "react-icons/fa";
 import './Styles/rightbar.css'
 
 
-const Rightbar = () =>{
-    const [user,setUser] = useState(null)
-    const URL = "http://localhost:4000/users/"
-
-    const getUsers = () =>{
-        fetch(URL)
-        .then(response => response.json())
-        .then(data => setUser(data))
-    }
-
-    useEffect(()=> getUsers(),[])
-
-
+const Rightbar = (props) =>{
+    let users = props.users
 
     const loaded = () =>{
-        return user.map((u,idx)=>(
+        return users.map((u,idx)=>(
             <div key = {idx}>
                   <li className='rightBarFriend'>
                         <div className="rightbarImgContainer">
@@ -29,7 +17,7 @@ const Rightbar = () =>{
             </div>
         ))
     }
-    return user ? (
+    return users ? (
         <div className='rightbar'>
             <div className='rightbarWrapper'>
                 <div className='birthdayContainer'>
@@ -45,6 +33,7 @@ const Rightbar = () =>{
             </div>
         </div>
     ):<h1>..Hmm can't find friends</h1>
+
 }
 
 export default Rightbar
