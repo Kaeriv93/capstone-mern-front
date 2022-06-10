@@ -7,7 +7,9 @@ const Share = (props) =>{
 
     const[newForm, setNewForm] = useState({
         content:'',
-        img:''
+        img:'https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png'
+
+    
     })
 
     const handleChange = (e) => {
@@ -19,7 +21,9 @@ const Share = (props) =>{
         props.createPost(newForm)
         setNewForm({
             content:'',
-            img:''
+            img:'https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/9142/thumb_CMYK-Red_Small_GeneralAssembly-Cog.png'
+     
+    
         })
 
     }

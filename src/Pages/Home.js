@@ -20,13 +20,13 @@ const Home = (props) =>{
     
     useEffect(()=> getPost(),[])
 
-    const createPost = async(content) =>{
+    const createPost = async(content,img) =>{
         await fetch(URL2,{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',
             },
-            body:JSON.stringify(content)
+            body:JSON.stringify(content,img)
         })
         
     }
