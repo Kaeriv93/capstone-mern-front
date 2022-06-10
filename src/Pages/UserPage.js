@@ -104,11 +104,11 @@ const UserPage = (props) =>{
                         <img src ={user.avatar} alt={user.firstName}/>
                     <h1 class="title">About Me</h1>
                     <p>{user.description}</p>
-                    <p>{user.birthdate}</p>
                     </div>
                     <br/>
                     <br/>
                     <p className="title is-4">@{user.username}</p>
+                    <p>Birthday:{formatDate(user.birthdate)}</p>
                     <p>Name: {user.firstName}
                      {user.lastName}</p>
                     <p>Location: {user.city}</p>

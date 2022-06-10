@@ -1,13 +1,28 @@
 import './input.css'
 import { FaEllipsisV,FaThumbsUp,FaRegHeart} from "react-icons/fa";
+import {useState} from 'react'
 
 
 
 const Input = (props) =>{
     let users = props.users
     let post = props.post
-   
+    const [editForm, setEditForm] = useState(post)
+    const [isActive, isSetActive] = useState('false')
 
+    const handleChange = event =>{
+        setEditForm({...editForm, [event.target.name]:event.target.value})
+
+    }
+    
+    const handleSubmit = event =>{
+        event.preventDefault()
+        props.updatePost(editForm)
+    }
+
+    const handleToggle = () =>{
+        isSetActive(!isActive)
+    }
 
     const formatDate = (dateString) => {
         const options = { year: "numeric", month: "long", day: "numeric" }
@@ -35,6 +50,7 @@ const Input = (props) =>{
     }
     
     const loaded = () =>{
+        
         return post.reverse().map((posts,idx)=>(
             <div key={idx}>
                  <div className="input-container">
@@ -48,11 +64,17 @@ const Input = (props) =>{
                     <div className="topRight">
 
                     </div>
-                    <FaEllipsisV/>
+                    <button onClick={handleToggle} className='edit-post-button'><FaEllipsisV/></button>
                 </div>
                 <div className="inputMiddle">
                     <span className='postText'>{posts.content}</span>
                     <img className="postImg"src={posts.img} alt="pic-published"/>
+                    <form className={isActive ? "hidden-edit" : null}>
+                        <input className='input' name='content' type="text" placeholder='Edit Post!'/>
+                    </form>
+                    <form className={isActive ? "hidden-edit" : null}>
+                        <input className='input' name='img' type="text" placeholder='Edit Img!'/>
+                    </form>
                 </div>
                 <div className="inputBottom">
                     <div className='bottomLeft'>

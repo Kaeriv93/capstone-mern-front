@@ -10,7 +10,7 @@ const Posts = (props) =>{
         <div className="posts">
             <div className="postWrapper">
                 <Share createPost={props.createPost}/>
-                <Input users={users} post ={post}/>
+                <Input users={users} post ={post} updatePost={props.updatePost}/>
             </div>
         </div>
     )

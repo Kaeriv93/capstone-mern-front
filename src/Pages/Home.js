@@ -32,12 +32,23 @@ const Home = (props) =>{
         
     }
 
+    const updatePost = async( post, id) =>{
+        await fetch('http://localhost:4000/post/' + id,{
+            method:"PUT",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(post),
+        })
+        getPost(id)
+    }
+
 
     return(
         <>
             <div className="homeContainer">
                 <Sidebar/>
-                <Posts users={users} post={post} createPost={createPost}/>
+                <Posts users={users} post={post} createPost={createPost} updatePost={updatePost}/>
                 <Rightbar users={users}/> 
             </div>
         </>
