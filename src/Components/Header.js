@@ -1,5 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom'
 import { useCookies } from 'react-cookie'
+import './Styles/header.css'
 
 const Header = () =>{
     const navigate = useNavigate()
@@ -12,11 +13,13 @@ const Header = () =>{
     
     return(
      <>
-        <nav>
-            <Link to='/login'> Login</Link>
-            <Link to='/'> Home</Link>
-            <button  className="logout" onClick={logOut}>Logout</button>
-        </nav>
+        <div className='header'>
+            <nav>
+                <Link to='/login'> Login</Link>
+                <Link to='/'> Home</Link>
+                <button  className="logout" onClick={logOut}>Logout</button>
+            </nav>
+        </div>
      </>
     )
 }

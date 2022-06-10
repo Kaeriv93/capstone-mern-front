@@ -28,6 +28,7 @@ const Home = (props) =>{
             },
             body:JSON.stringify(content,img)
         })
+        getPost()
         
     }
 

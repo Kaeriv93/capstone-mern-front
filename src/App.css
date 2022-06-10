@@ -16,11 +16,6 @@ nav a:hover{
   background-color: white;
 }
 
-.logout{
-  border: none;
-  background-color: #F6F6F6;
-  cursor: pointer;
-}
 
 .brand-name{
   float: left;
