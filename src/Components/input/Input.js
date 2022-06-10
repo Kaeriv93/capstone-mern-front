@@ -6,7 +6,7 @@ import { FaEllipsisV,FaThumbsUp,FaRegHeart} from "react-icons/fa";
 const Input = (props) =>{
     let users = props.users
     let post = props.post
-    console.log(users._id)
+   
 
 
     const formatDate = (dateString) => {

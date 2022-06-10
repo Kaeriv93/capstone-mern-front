@@ -1,14 +1,35 @@
 import './share.css'
 import { FaPhotoVideo, FaSmile, FaMapMarkerAlt, FaTag } from "react-icons/fa";
+import { useState } from 'react';
 
 
-const Share = () =>{
+const Share = (props) =>{
+
+    // const[newForm, setNewForm] = useState({
+    //     content:''
+    // })
+
+    // const handleChange = (e) => {
+    //     setNewForm({...newForm, [e.target.name]:e.target.value})
+    // }
+
+    // const handleSubmit = (e) =>{
+    //     e.preventDefault()
+    //     props.createPost(newForm)
+    //     setNewForm({
+    //         content:''
+    //     })
+
+    // }
+
     return(
         <div className="share">
             <div className='shareWrapper'>
                 <div className='top'>
                     <img src="https://i.imgur.com/ON62Y4U.jpg" alt="Me"/>
-                    <input type="text" className='shareInput input' placeholder="What's on your mind, firstName?"/>
+                    <form>
+                        <input id="postText" type="text" className='shareInput input' name="content"  placeholder="What's on your mind, firstName?"/>
+                    </form>
                 </div>
                 <hr className='shareHr'/>
                 <div className="bottom">

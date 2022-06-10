@@ -25,7 +25,15 @@
 
 .shareInput{
     border: none;
+
 }
+
+#postText{
+    width: 32vw;
+}
+
+
+
 
 .top{
     display: flex;

@@ -20,23 +20,23 @@ const Home = (props) =>{
     
     useEffect(()=> getPost(),[])
 
-    const createPost = async() =>{
-        await fetch(URL2,{
-            method:'POST',
-            headers:{
-                'Content-Type': 'application/json',
-            },
-            body:JSON.stringify()
-        })
+    // const createPost = async(content) =>{
+    //     await fetch(URL2,{
+    //         method:'POST',
+    //         headers:{
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body:JSON.stringify(content)
+    //     })
         
-    }
+    // }
 
 
     return(
         <>
             <div className="homeContainer">
                 <Sidebar/>
-                <Posts users={users} post={post} createPost={createPost}/>
+                <Posts users={users} post={post}/>
                 <Rightbar users={users}/> 
             </div>
         </>
