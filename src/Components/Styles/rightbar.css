@@ -62,3 +62,7 @@
 .rightbarUsername{
     font-weight: 500;
 }
+
+.rightBarFirstName{
+    margin-right: 5px;
+}

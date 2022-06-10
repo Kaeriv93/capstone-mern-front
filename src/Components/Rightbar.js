@@ -12,7 +12,7 @@ const Rightbar = (props) =>{
                         <div className="rightbarImgContainer">
                             <img className="rightbarProfileImg" src={u.avatar} alt={u.firstName}/>
                         </div>
-                        <span className="rightbarUsername">{u.firstName}{u.lastName}</span>
+                        <span className="rightbarUsername"><span className="rightBarFirstName">{u.firstName}</span>{u.lastName}</span>
                     </li>
             </div>
         ))

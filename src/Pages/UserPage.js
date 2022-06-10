@@ -104,6 +104,7 @@ const UserPage = (props) =>{
                         <img src ={user.avatar} alt={user.firstName}/>
                     <h1 class="title">About Me</h1>
                     <p>{user.description}</p>
+                    <p>{user.birthdate}</p>
                     </div>
                     <br/>
                     <br/>
@@ -126,15 +127,15 @@ const UserPage = (props) =>{
                 <div className={isActive ? "hiddenForm" : null}>
                     <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.firstName}/>
-                        <input className="button is-link" type='submit'/>
+                        <input className="button is-link" type='submit' value="FName"/>
                     </form>
                     <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="lastName" placeholder="edit here!" value={editForm.lastName}/>
-                        <input className="button is-link" type='submit'/>
+                        <input className="button is-link" type='submit' value="LName"/>
                     </form>
                     <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="username" placeholder="edit here!" value={editForm.username}/>
-                        <input className="button is-link" type='submit'/>
+                        <input className="button is-link" type='submit' value="Username"/>
                     </form>
                     <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="avatar" placeholder="Enter a picture!" value={editForm.avatar}/>
@@ -151,6 +152,14 @@ const UserPage = (props) =>{
                     <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="from" placeholder="Where are you from?" value={editForm.from}/>
                         <input className="button is-link" type='submit'/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="description" placeholder="Tell us about yourself!" value={editForm.description}/>
+                        <input className="button is-link" type='submit' value="Bio"/>
+                    </form>
+                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="date" name="description" placeholder="Enter Birthdate" value={editForm.birthdate}/>
+                        <input className="button is-link" type='submit' value="Birthday"/>
                     </form>
                 </div>
                     <div onClick={toggleDelete}className="deleteAccount">
