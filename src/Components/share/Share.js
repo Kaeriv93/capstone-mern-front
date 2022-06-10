@@ -27,8 +27,8 @@ const Share = (props) =>{
             <div className='shareWrapper'>
                 <div className='top'>
                     <img src="https://i.imgur.com/ON62Y4U.jpg" alt="Me"/>
-                    <form>
-                        <input id="postText" type="text" className='shareInput input' name="content"  placeholder="What's on your mind?"/>
+                    <form onSubmit={handleSubmit}>
+                        <input id="postText" type="text" className='shareInput input' name="content"  placeholder="What's on your mind?" value={newForm.content} onChange={handleChange}/>
                         <hr className='shareHr'/>
                         <div className="bottom">
                             <div className='shareOptions'>
@@ -49,7 +49,7 @@ const Share = (props) =>{
                                     <span className='shareOptionText'>Feelings</span>
                                 </div>
                             </div>
-                            <button className='shareButton button is-success'>Share</button>
+                            <button type="submit" className='shareButton button is-success'>Share</button>
                         </div>
                     </form>
                 </div>
