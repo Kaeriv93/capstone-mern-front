@@ -1,28 +1,18 @@
 import './input.css'
 import { FaEllipsisV,FaThumbsUp,FaRegHeart} from "react-icons/fa";
-import {useEffect,useState} from 'react'
+
 
 
 const Input = (props) =>{
     let users = props.users
+    let post = props.post
     console.log(users._id)
 
-    const [post,setPost] = useState(null)
-
-    const URL2 ="http://localhost:4000/post"
-
-    const getPost = () =>{
-        fetch(URL2)
-        .then(response => response.json())
-        .then(result => setPost(result))
-    }
 
     const formatDate = (dateString) => {
         const options = { year: "numeric", month: "long", day: "numeric" }
         return new Date(dateString).toLocaleDateString(undefined, options)
       }
-
-    useEffect(()=> getPost(),[])
 
     const name = (id) =>{
         for(let i = 0; i< users.length; i++){
@@ -87,6 +77,3 @@ const Input = (props) =>{
 
 export default Input
 
-// return users ? (
-//     <h1>Hello world!</h1>
-// ): <h1>Don't think this works!</h1>
