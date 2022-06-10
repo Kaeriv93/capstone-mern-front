@@ -158,7 +158,7 @@ const UserPage = (props) =>{
                         <input className="button is-link" type='submit' value="Bio"/>
                     </form>
                     <form onSubmit ={handleSubmit} className="nameEdit">
-                        <input onChange={handleChange} className="input" type ="date" name="description" placeholder="Enter Birthdate" value={editForm.birthdate}/>
+                        <input onChange={handleChange} className="input" type ="date" name="birthdate" placeholder="Enter Birthdate" value={editForm.birthdate}/>
                         <input className="button is-link" type='submit' value="Birthday"/>
                     </form>
                 </div>
