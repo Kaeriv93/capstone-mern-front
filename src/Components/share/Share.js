@@ -6,7 +6,8 @@ import { useState } from 'react';
 const Share = (props) =>{
 
     const[newForm, setNewForm] = useState({
-        content:''
+        content:'',
+        img:''
     })
 
     const handleChange = (e) => {
@@ -17,7 +18,8 @@ const Share = (props) =>{
         e.preventDefault()
         props.createPost(newForm)
         setNewForm({
-            content:''
+            content:'',
+            img:''
         })
 
     }
