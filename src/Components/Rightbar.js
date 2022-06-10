@@ -1,19 +1,25 @@
 import { FaBirthdayCake } from "react-icons/fa";
+import {Link} from 'react-router-dom'
 import './Styles/rightbar.css'
 
 
 const Rightbar = (props) =>{
+  
     let users = props.users
+
+
 
     const loaded = () =>{
         return users.map((u,idx)=>(
             <div key = {idx}>
-                  <li className='rightBarFriend'>
-                        <div className="rightbarImgContainer">
-                            <img className="rightbarProfileImg" src={u.avatar} alt={u.firstName}/>
-                        </div>
-                        <span className="rightbarUsername"><span className="rightBarFirstName">{u.firstName}</span>{u.lastName}</span>
-                    </li>
+                <Link to={`/user/${u._id}`}>
+                <li className='rightBarFriend'>
+                    <div className="rightbarImgContainer">
+                        <img className="rightbarProfileImg" src={u.avatar} alt={u.firstName}/>
+                    </div>
+                    <span className="rightbarUsername"><span className="rightBarFirstName">{u.firstName}</span>{u.lastName}</span>
+                </li>
+                </Link>
             </div>
         ))
     }
