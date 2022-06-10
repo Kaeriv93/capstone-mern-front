@@ -1,6 +1,7 @@
 .shareHr{
     background-color:#d3d3d3;
     margin: 20px;
+    width: 80%;
 }
 
 .share{
@@ -25,6 +26,7 @@
 
 .shareInput{
     border: none;
+    right: 20px;
 
 }
 
@@ -44,6 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 50px;
 }
 
 .shareOptions{
