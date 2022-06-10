@@ -53,7 +53,6 @@ const Input = (props) =>{
                     <div className='topLeft'>
                         {picture(posts.userId)}
                         <span className="postUsername">{name(posts.userId)}</span>
-                        {/* {console.log(posts.userId)} */}
                         <span className="postDate">{formatDate(posts.createdAt)}</span>
                     </div>
                     <div className="topRight">
