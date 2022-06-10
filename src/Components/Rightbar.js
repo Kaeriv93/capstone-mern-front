@@ -31,7 +31,7 @@ const Rightbar = (props) =>{
                     <br/>
                     <span className="birthdayText"><b>Jesse Broxton</b> and <b>2 other friends</b> have a birthday today!</span>
                 </div>
-                <img className="generalAssembly" src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/logo_1200_by_627_1QIVL.jpg" alt="ga"/>
+                <a href="https://generalassemb.ly/" target="_blank" rel="noopener noreferrer" ><img className="generalAssembly" src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/logo_1200_by_627_1QIVL.jpg" alt="ga"/></a>
                 <h4 className="rightbarTitle">Friends</h4>
                 <ul className="rightbarFriendList">
                   {loaded()}
