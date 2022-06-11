@@ -10,7 +10,7 @@ import UserPage from '../Pages/UserPage'
 
 const Main = () =>{
     const [user,setUser] = useState(null)
-    const URL = "http://localhost:4000/users/"
+    const URL = "https://myfacegram-backend.herokuapp.com/users/"
 
     const getUsers = () =>{
         fetch(URL)
@@ -22,7 +22,7 @@ const Main = () =>{
 useEffect(()=> getUsers(),[])
 
     const updatedUser = async( user, id) =>{
-        await fetch('http://localhost:4000/user/' + id,{
+        await fetch('https://myfacegram-backend.herokuapp.com/user/' + id,{
             method:"PUT",
             headers:{
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ useEffect(()=> getUsers(),[])
     }
 
     const deleteUser = async id =>{
-        await fetch('http://localhost:4000/user/' + id,{
+        await fetch('https://myfacegram-backend.herokuapp.com/user/' + id,{
             method:'DELETE',
         })
         getUsers()

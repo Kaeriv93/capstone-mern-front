@@ -9,7 +9,7 @@ const Home = (props) =>{
     const [post,setPost] = useState(null)
     
 
-    const URL2 ="http://localhost:4000/post"
+    const URL2 ="https://myfacegram-backend.herokuapp.com/post"
 
     const getPost = () =>{
         fetch(URL2)
@@ -33,7 +33,7 @@ const Home = (props) =>{
     }
 
     const updatePost = async( post, id) =>{
-        await fetch('http://localhost:4000/post/' + id,{
+        await fetch('https://myfacegram-backend.herokuapp.com/post/' + id,{
             method:"PUT",
             headers:{
                 "Content-Type": "application/json",
