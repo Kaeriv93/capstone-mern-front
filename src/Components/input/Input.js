@@ -7,18 +7,19 @@ import {useState} from 'react'
 const Input = (props) =>{
     let users = props.users
     let post = props.post
-    const [editForm, setEditForm] = useState(post)
+    console.log(post)
     const [isActive, isSetActive] = useState('false')
+    const [editForm, setEditForm] = useState(post)
 
-    const handleChange = event =>{
-        setEditForm({...editForm, [event.target.name]:event.target.value})
+    // const handleChange = event =>{
+    //     setEditForm({...editForm, [event.target.name]:event.target.value})
 
-    }
+    // }
     
-    const handleSubmit = event =>{
-        event.preventDefault()
-        props.updatePost(editForm)
-    }
+    // const handleSubmit = event =>{
+    //     event.preventDefault()
+    //     props.updatePost(editForm)
+    // }
 
     const handleToggle = () =>{
         isSetActive(!isActive)
@@ -50,6 +51,15 @@ const Input = (props) =>{
     }
     
     const loaded = () =>{
+        const handleChange = event =>{
+            setEditForm({...editForm, [event.target.name]:event.target.value})
+    
+        }
+        
+        const handleSubmit = event =>{
+            event.preventDefault()
+            props.updatePost(editForm)
+        }
         
         return post.reverse().map((posts,idx)=>(
             <div key={idx}>
@@ -69,11 +79,9 @@ const Input = (props) =>{
                 <div className="inputMiddle">
                     <span className='postText'>{posts.content}</span>
                     <img className="postImg"src={posts.img} alt="pic-published"/>
-                    <form className={isActive ? "hidden-edit" : null}>
-                        <input className='input' name='content' type="text" placeholder='Edit Post!'/>
-                    </form>
-                    <form className={isActive ? "hidden-edit" : null}>
-                        <input className='input' name='img' type="text" placeholder='Edit Img!'/>
+                    <form onSubmit={handleSubmit} className={isActive ? "hidden-edit" : null}>
+                        <input onChange={handleChange} className='input'value={posts.content} name='content' type="text" placeholder='Edit Post!'/>
+                        <input onChange={handleChange} className='input'value={posts.img} name='img' type="text" placeholder='Edit Img!'/>
                     </form>
                 </div>
                 <div className="inputBottom">

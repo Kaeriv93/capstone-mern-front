@@ -40,7 +40,7 @@ const Home = (props) =>{
             },
             body: JSON.stringify(post),
         })
-        getPost(id)
+        getPost()
     }
 
 
