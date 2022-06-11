@@ -1,28 +1,34 @@
 import './input.css'
 import { FaEllipsisV,FaThumbsUp,FaRegHeart} from "react-icons/fa";
-import {useEffect,useState} from 'react'
+import {useState} from 'react'
+
 
 
 const Input = (props) =>{
     let users = props.users
-    console.log(users._id)
+    let post = props.post
+    console.log(post)
+    const [isActive, isSetActive] = useState('false')
+    const [editForm, setEditForm] = useState(post)
 
-    const [post,setPost] = useState(null)
+    // const handleChange = event =>{
+    //     setEditForm({...editForm, [event.target.name]:event.target.value})
 
-    const URL2 ="http://localhost:4000/post"
+    // }
+    
+    // const handleSubmit = event =>{
+    //     event.preventDefault()
+    //     props.updatePost(editForm)
+    // }
 
-    const getPost = () =>{
-        fetch(URL2)
-        .then(response => response.json())
-        .then(result => setPost(result))
+    const handleToggle = () =>{
+        isSetActive(!isActive)
     }
 
     const formatDate = (dateString) => {
         const options = { year: "numeric", month: "long", day: "numeric" }
         return new Date(dateString).toLocaleDateString(undefined, options)
       }
-
-    useEffect(()=> getPost(),[])
 
     const name = (id) =>{
         for(let i = 0; i< users.length; i++){
@@ -45,6 +51,16 @@ const Input = (props) =>{
     }
     
     const loaded = () =>{
+        const handleChange = event =>{
+            setEditForm({...editForm, [event.target.name]:event.target.value})
+    
+        }
+        
+        const handleSubmit = event =>{
+            event.preventDefault()
+            props.updatePost(editForm)
+        }
+        
         return post.reverse().map((posts,idx)=>(
             <div key={idx}>
                  <div className="input-container">
@@ -53,17 +69,20 @@ const Input = (props) =>{
                     <div className='topLeft'>
                         {picture(posts.userId)}
                         <span className="postUsername">{name(posts.userId)}</span>
-                        {/* {console.log(posts.userId)} */}
                         <span className="postDate">{formatDate(posts.createdAt)}</span>
                     </div>
                     <div className="topRight">
 
                     </div>
-                    <FaEllipsisV/>
+                    <button onClick={handleToggle} className='edit-post-button'><FaEllipsisV/></button>
                 </div>
                 <div className="inputMiddle">
                     <span className='postText'>{posts.content}</span>
                     <img className="postImg"src={posts.img} alt="pic-published"/>
+                    <form onSubmit={handleSubmit} className={isActive ? "hidden-edit" : null}>
+                        <input onChange={handleChange} className='input'value={posts.content} name='content' type="text" placeholder='Edit Post!'/>
+                        <input onChange={handleChange} className='input'value={posts.img} name='img' type="text" placeholder='Edit Img!'/>
+                    </form>
                 </div>
                 <div className="inputBottom">
                     <div className='bottomLeft'>
@@ -88,6 +107,3 @@ const Input = (props) =>{
 
 export default Input
 
-// return users ? (
-//     <h1>Hello world!</h1>
-// ): <h1>Don't think this works!</h1>

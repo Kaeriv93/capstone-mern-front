@@ -45,6 +45,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    color: #5e5e5e;
+}
+
+.rightBarFriend:hover{
+    color: black;
 }
 
 .rightbarImgContainer{
@@ -62,3 +67,8 @@
 .rightbarUsername{
     font-weight: 500;
 }
+
+.rightBarFirstName{
+    margin-right: 5px;
+}
+

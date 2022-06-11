@@ -1,0 +1,27 @@
+.header{
+    background-color:#0077b5;
+    font-size: 1rem;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header a{
+    color: aliceblue;
+}
+
+.header a:hover{
+    color: #dfdfdf;
+}
+
+.logout{
+    border: none;
+    background-color: #0077b5;
+    cursor: pointer;
+    color: aliceblue;
+    font-size: 1rem;
+  }
+
+  .logout:hover{
+      color: #dfdfdf;
+  }
