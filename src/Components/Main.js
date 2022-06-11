@@ -29,7 +29,7 @@ useEffect(()=> getUsers(),[])
             },
             body: JSON.stringify(user),
         })
-        getUsers(user)
+        getUsers()
     }
 
     const deleteUser = async id =>{

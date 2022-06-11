@@ -22,7 +22,7 @@ const UserPage = (props) =>{
     const handleSubmit = event =>{
         event.preventDefault()
         props.updatedUser(editForm, id)
-        navigate(`/user/${id}`)
+        navigate(`/`)
     }
 
     const deleteAccount = () =>{
@@ -126,40 +126,17 @@ const UserPage = (props) =>{
                 <button onClick={handleToggle}className="edit button is-success"><span className="edit-text">Edit</span><FaEdit/></button>
                 <div className={isActive ? "hiddenForm" : null}>
                     <form onSubmit ={handleSubmit} className="nameEdit">
-                        <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="edit here!" value={editForm.firstName}/>
-                        <input className="button is-link" type='submit' value="FName"/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
-                        <input onChange={handleChange} className="input" type ="text" name="lastName" placeholder="edit here!" value={editForm.lastName}/>
-                        <input className="button is-link" type='submit' value="LName"/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
-                        <input onChange={handleChange} className="input" type ="text" name="username" placeholder="edit here!" value={editForm.username}/>
-                        <input className="button is-link" type='submit' value="Username"/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
+                        <input onChange={handleChange} className="input" type ="text" name="firstName" placeholder="First Name!" value={editForm.firstName}/>
+                        <input onChange={handleChange} className="input" type ="text" name="lastName" placeholder="Last Name!" value={editForm.lastName}/>
+                        <input onChange={handleChange} className="input" type ="text" name="username" placeholder="Username!!" value={editForm.username}/>
                         <input onChange={handleChange} className="input" type ="text" name="avatar" placeholder="Enter a picture!" value={editForm.avatar}/>
-                        <input className="button is-link" type='submit' value ="Picture"/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="coverPicture" placeholder="Enter a cover picture!" value={editForm.coverPicture}/>
-                        <input className="button is-link" type='submit' value="Backdrop"/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="city" placeholder="Enter City!" value={editForm.city}/>
-                        <input className="button is-link" type='submit'/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="from" placeholder="Where are you from?" value={editForm.from}/>
-                        <input className="button is-link" type='submit'/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="text" name="description" placeholder="Tell us about yourself!" value={editForm.description}/>
-                        <input className="button is-link" type='submit' value="Bio"/>
-                    </form>
-                    <form onSubmit ={handleSubmit} className="nameEdit">
                         <input onChange={handleChange} className="input" type ="date" name="birthdate" placeholder="Enter Birthdate" value={editForm.birthdate}/>
-                        <input className="button is-link" type='submit' value="Birthday"/>
+                        <br/>
+                        <input className="button is-link" type='submit' value="Submit!"/>
                     </form>
                 </div>
                     <div onClick={toggleDelete}className="deleteAccount">
