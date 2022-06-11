@@ -95,6 +95,7 @@ const UserPage = (props) =>{
 
     return blog ?(
         <>  
+            
             <div className="cover">
                 <img src ={user.coverPicture} alt="coverpicture"/>
             </div>
