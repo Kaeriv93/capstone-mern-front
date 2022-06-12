@@ -15,7 +15,7 @@ const Header = () =>{
      <>
         <div className='header'>
             <nav>
-                <Link to='/'> Home</Link>
+                <Link to='/home'> Home</Link>
                 <button  className="logout" onClick={logOut}>Logout</button>
             </nav>
         </div>
