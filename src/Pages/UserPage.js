@@ -12,6 +12,7 @@ const UserPage = (props) =>{
     let {id} = useParams()
     let users = props.user
     let user = users.find(u => u._id ===id)
+  
     
     const[editForm, setEditForm] = useState(user)
 
@@ -20,9 +21,11 @@ const UserPage = (props) =>{
     }
 
     const handleSubmit = event =>{
+
         event.preventDefault()
         props.updatedUser(editForm, id)
         navigate(`/`)
+     
     }
 
     const deleteAccount = () =>{
@@ -45,7 +48,7 @@ const UserPage = (props) =>{
 
     useEffect(()=>{
         const getBlogData = async ()=>{
-            const response = await fetch(`http://localhost:4000/user/${id}/blog`)
+            const response = await fetch(`https://myfacegram-backend.herokuapp.com/user/${id}/blog`)
             const data = await response.json()
             setBlog(data)
             console.log(data)
@@ -95,6 +98,7 @@ const UserPage = (props) =>{
 
     return blog ?(
         <>  
+            
             <div className="cover">
                 <img src ={user.coverPicture} alt="coverpicture"/>
             </div>

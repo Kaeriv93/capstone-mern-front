@@ -11,15 +11,6 @@ const Input = (props) =>{
     const [isActive, isSetActive] = useState('false')
     const [editForm, setEditForm] = useState(post)
 
-    // const handleChange = event =>{
-    //     setEditForm({...editForm, [event.target.name]:event.target.value})
-
-    // }
-    
-    // const handleSubmit = event =>{
-    //     event.preventDefault()
-    //     props.updatePost(editForm)
-    // }
 
     const handleToggle = () =>{
         isSetActive(!isActive)
