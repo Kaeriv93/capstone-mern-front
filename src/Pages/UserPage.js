@@ -99,10 +99,10 @@ const UserPage = (props) =>{
 
     return blog ?(
         <>  
-            <Header/>
             <div className="cover">
                 <img src ={user.coverPicture} alt="coverpicture"/>
             </div>
+        <Header/>
            <div className="grid-container">
                <div className="box">
                     <div className="user">
