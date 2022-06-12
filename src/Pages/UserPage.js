@@ -3,6 +3,7 @@ import {useEffect,useState} from 'react'
 import { FaHeart, FaEdit} from "react-icons/fa";
 import { ToastContainer, toast} from "react-toastify";
 import './Styles/userpage.css'
+import Header from "../Components/Header";
 
 const UserPage = (props) =>{
     const navigate = useNavigate()
@@ -45,9 +46,7 @@ const UserPage = (props) =>{
        isSetDelete(!isDelete)
    }
 
-   const homeButton = () =>{
-       navigate('/home')
-   }
+
 
 
     useEffect(()=>{
@@ -101,7 +100,8 @@ const UserPage = (props) =>{
 
 
     return blog ?(
-        <>  
+        <>
+        <Header/>  
             <div className="cover">
                 <img src ={user.coverPicture} alt="coverpicture"/>
             </div>
@@ -121,7 +121,7 @@ const UserPage = (props) =>{
                     <p>Location: {user.city}</p>
                     <p>From: {user.from}</p>
                     <br/>
-                    <button onClick={homeButton}className='button is-link'>Home</button>
+         
                </div>
            </div>
            <br/>
