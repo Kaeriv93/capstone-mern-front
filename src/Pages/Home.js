@@ -2,6 +2,7 @@ import Posts from "../Components/Posts"
 import Sidebar from "../Components/Sidebar"
 import Rightbar from "../Components/Rightbar"
 import{useState, useEffect} from 'react'
+import Header from './Components/Header';
 import './Styles/home.css'
 const Home = (props) =>{
     let users = props.user
@@ -45,7 +46,8 @@ const Home = (props) =>{
 
 
     return(
-        <>
+        <>  
+            <Header/>
             <div className="homeContainer">
                 <Sidebar/>
                 <Posts users={users} post={post} createPost={createPost} updatePost={updatePost}/>

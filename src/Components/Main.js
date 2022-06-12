@@ -47,8 +47,8 @@ useEffect(()=> getUsers(),[])
     return(
        <main>
            <Routes>
-               <Route path = '/' element={<Home user={user}/>}/>
-               <Route path ='/login' element ={<Login/>}/>
+               <Route path ='/' element ={<Login/>}/>
+               <Route path = '/home' element={<Home user={user}/>}/>
                <Route path = '/register' element ={<Register/>}/>
                <Route path = '/user/:id' element ={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
            </Routes>
