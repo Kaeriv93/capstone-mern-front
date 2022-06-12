@@ -12,6 +12,7 @@ const UserPage = (props) =>{
     let {id} = useParams()
     let users = props.user
     let user = users.find(u => u._id ===id)
+  
     
     const[editForm, setEditForm] = useState(user)
 
@@ -20,9 +21,11 @@ const UserPage = (props) =>{
     }
 
     const handleSubmit = event =>{
+
         event.preventDefault()
         props.updatedUser(editForm, id)
         navigate(`/`)
+     
     }
 
     const deleteAccount = () =>{
