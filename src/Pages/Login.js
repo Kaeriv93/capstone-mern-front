@@ -12,7 +12,7 @@ function Login() {
     const navigate = useNavigate();
     useEffect(() => {
       if (cookies.jwt) {
-        navigate("/");
+        navigate("/home");
       }
     }, [cookies, navigate]);
     const [newForm, setNewForm] = useState({

@@ -24,7 +24,7 @@ const UserPage = (props) =>{
 
         event.preventDefault()
         props.updatedUser(editForm, id)
-        navigate(`/`)
+        navigate('/home')
      
     }
 

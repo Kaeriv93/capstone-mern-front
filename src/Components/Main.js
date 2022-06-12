@@ -8,6 +8,7 @@ import UserPage from '../Pages/UserPage'
 
 
 
+
 const Main = () =>{
     const [user,setUser] = useState(null)
     const URL = "https://myfacegram-backend.herokuapp.com/users/"
@@ -47,8 +48,8 @@ useEffect(()=> getUsers(),[])
     return(
        <main>
            <Routes>
-               <Route path = '/' element={<Home user={user}/>}/>
-               <Route path ='/login' element ={<Login/>}/>
+               <Route path = '/home' element={<Home user={user}/>}/>
+               <Route path ='/' element ={<Login/>}/>
                <Route path = '/register' element ={<Register/>}/>
                <Route path = '/user/:id' element ={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
            </Routes>
