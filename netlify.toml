@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+
+  /api/* https://myfacegram-backend.herokuapp.com/:splat 200
