@@ -2,7 +2,6 @@ import {useParams, useNavigate,} from "react-router-dom"
 import {useEffect,useState} from 'react'
 import { FaHeart, FaEdit} from "react-icons/fa";
 import { ToastContainer, toast} from "react-toastify";
-import Header from "../Components/Header";
 import './Styles/userpage.css'
 
 const UserPage = (props) =>{
@@ -44,6 +43,10 @@ const UserPage = (props) =>{
 
    const toggleDelete =() =>{
        isSetDelete(!isDelete)
+   }
+
+   const homeButton = () =>{
+       navigate('/home')
    }
 
 
@@ -102,7 +105,6 @@ const UserPage = (props) =>{
             <div className="cover">
                 <img src ={user.coverPicture} alt="coverpicture"/>
             </div>
-        <Header/>
            <div className="grid-container">
                <div className="box">
                     <div className="user">
@@ -118,6 +120,8 @@ const UserPage = (props) =>{
                      {user.lastName}</p>
                     <p>Location: {user.city}</p>
                     <p>From: {user.from}</p>
+                    <br/>
+                    <button onClick={homeButton}className='button is-link'>Home</button>
                </div>
            </div>
            <br/>
