@@ -2,6 +2,7 @@ import {useParams, useNavigate,} from "react-router-dom"
 import {useEffect,useState} from 'react'
 import { FaHeart, FaEdit} from "react-icons/fa";
 import { ToastContainer, toast} from "react-toastify";
+import Header from "../Components/Header";
 import './Styles/userpage.css'
 
 const UserPage = (props) =>{
@@ -98,7 +99,7 @@ const UserPage = (props) =>{
 
     return blog ?(
         <>  
-            
+            <Header/>
             <div className="cover">
                 <img src ={user.coverPicture} alt="coverpicture"/>
             </div>
