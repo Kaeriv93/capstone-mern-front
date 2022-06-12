@@ -8,14 +8,13 @@ const Header = () =>{
     
     const logOut = () =>{
         removeCookie('jwt')
-        navigate('/login')
+        navigate('/')
     }
     
     return(
      <>
         <div className='header'>
             <nav>
-                <Link to='/login'> Login</Link>
                 <Link to='/'> Home</Link>
                 <button  className="logout" onClick={logOut}>Logout</button>
             </nav>
