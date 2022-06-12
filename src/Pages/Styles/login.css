@@ -17,7 +17,8 @@ a:hover{
 }
 
 .loginpage{
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
+    padding-top: 10vh;
     display: flex;
     height: 40vw;
 }
@@ -39,3 +40,4 @@ a:hover{
     font-size: 1.5rem;
     text-align: left;
 }
+
