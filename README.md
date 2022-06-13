@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Project
+Description: I will creating a small web social application. The app will allow a user  to create an account and make posts. They are not only able to make a post to the main page, but also have personal blog posts on their own page. Their personal blogs cannot be viewed unless their page is followed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Component Hierachy
+<img width="1248" alt="COMPONENTS_HEADERS" src="https://user-images.githubusercontent.com/95429272/171917719-3d251af3-14b6-4e37-9036-09e9635fc236.png">
 
-## Available Scripts
+# Models
+<img width="2002" alt="Models ERD" src="https://user-images.githubusercontent.com/95429272/171917745-f4104b63-3345-4796-8c31-33c511bacf98.png">
 
-In the project directory, you can run:
+# Wireframes
+# Main P<img width="1436" alt="Screen Shot 2022-06-13 at 5 13 12 AM (2)" src="https://user-images.githubusercontent.com/95429272/173378358-9f316e58-24da-48ec-af0f-fff0b50dee22.png">
+age
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Profile Page
+<img width="1436" alt="Screen Shot 2022-06-13 at 5 13 03 AM (2)" src="https://user-images.githubusercontent.com/95429272/173378394-1ecf2027-1b88-4574-b8ce-3b22d5aad4ce.png">
+<img width="1436" alt="Screen Shot 2022-06-13 at 5 12 33 AM (2)" src="https://user-images.githubusercontent.com/95429272/173378427-1140ae0d-0155-46fb-ac65-d506cb44b961.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# User Stories
+As a user I want to be able to register an account and only able to view the page if a user is logged in
+As a user when I am logged in it will redirect me to my profile page
+As a user when I am signing up, I want to be able to make edits to my page
+I want to be able to make a personal blog on my actual profile, but it will not be viewable unless another user is following my page.
+I want to be able to set my status as available or away
+As a user I want to be able to make a post on the main page section where anyone can view
+As a user I want to be able to view my friends/ followers page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# MVP
+Authentication, we will be using JWEB Tokens again, but this time we will set it to locale storage
+This will be based with a REACT FrontEnd, will attempt to rework django backend, but if proven difficult will switch to a MERN stack application
+Able to have an add friend/follower feature
 
-### `npm run build`
+# Stretch
+Implementing a real chat system. In my play around I was able to get it to work only locally, but I will have to configure it so that it will display the user's name and such.
+Implement a dark/light theme
+Having user’s able to repost another users blog
+Using Django REST Framework over MERN
+Impressed with an upload file from the computer, I would love to implement that if possible.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
